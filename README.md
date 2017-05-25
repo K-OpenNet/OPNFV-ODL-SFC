@@ -28,8 +28,7 @@ The 'Past Repositories' table shows other repositories related to the Scheduler 
 
 > ### Code URL (under K-OpenNet)
 
-| # | Software Name      | Contents                                        | URl                                                                 |
+| # | Software Name      | Contents                                        | URl         |
 |---|----------------------------------------|-------------------------------------------------|---------------------------------------------------------------------|
-
 | 1 | ODL-OPNFV-LoadPathAwareSFschedulerAPI  | Load/Path-aware SF Scheduler API                | https://github.com/opendaylight/sfc/blob/stable/carbon/sfc-provider/src/main/java/org/opendaylight/sfc/provider/api/SfcServiceFunctionLoadPathAwareSchedulerAPI.java |
 | 2 | ODL-OPNFV-LoadPathAwareSFschedulerTest | Unit tests for Load/Path-aware SF Scheduler API | https://github.com/opendaylight/sfc/blob/stable/carbon/sfc-provider/src/test/java/org/opendaylight/sfc/provider/api/SfcServiceFunctionLoadPathAwareSchedulerAPITest.java |
