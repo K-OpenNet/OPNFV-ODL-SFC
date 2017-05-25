@@ -1,4 +1,0 @@
----
-features:
-  - Support VNF create with direct VNFD template input via CLI/API without
-    onboarding VNFD.

@@ -1,6 +1,0 @@
----
-features:
-  - |
-    Add Guru Meditation support.
-    Command "kill -s SIGUSR2 <tacker-server-pid>"
-    will make tacker server emit running configuration.
