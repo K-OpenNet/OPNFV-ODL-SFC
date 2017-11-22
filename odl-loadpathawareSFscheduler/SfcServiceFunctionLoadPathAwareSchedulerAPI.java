@@ -289,6 +289,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
      * returns a name of the instance with the lowest CPU utilization among the
      * instances whose hop counts to the previously selected SF instance are less
      * than or equal to Path_threshold (default value is 3).
+     * Path_threshold is variable according to the SFC policy.
      * <p>
      *
      * @param chain Service Function Chain to render
