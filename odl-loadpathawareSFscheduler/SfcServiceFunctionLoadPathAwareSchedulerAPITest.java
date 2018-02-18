@@ -99,8 +99,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPITest extends AbstractDat
                 add("196.168.55.11");
                 add("196.168.55.12");
                 add("196.168.55.13");
-                add("196.168.55.14");
-                                  }
+                                                }
         };
 
         final List<String> IP_MGMT_ADDRESS = new ArrayList<String>() {
@@ -120,8 +119,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPITest extends AbstractDat
                 add("196.168.55.111");
                 add("196.168.55.112");
                 add("196.168.55.113");
-                add("196.168.55.114");
-                                    }
+                                                 }
         };
 
         final int PORT = 555;
@@ -143,8 +141,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPITest extends AbstractDat
                 add(new SfName("nat_5"));
                 add(new SfName("nat_6"));
                 add(new SfName("fw_5"));
-                add(new SfName("fw_6"));
-                                      }
+                                                   }
         };
 
         final List<SftTypeName> SF_TYPES = new ArrayList<SftTypeName>() {
@@ -164,8 +161,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPITest extends AbstractDat
                 add(new SftTypeName("napt44"));
                 add(new SftTypeName("napt44"));
                 add(new SftTypeName("firewall"));
-                add(new SftTypeName("firewall"));
-                                       }
+                                                   }
         };
 
         PortNumber portNumber = new PortNumber(PORT);
