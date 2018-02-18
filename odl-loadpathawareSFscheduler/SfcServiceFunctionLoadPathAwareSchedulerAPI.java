@@ -111,7 +111,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
             }
 
             if (sftServiceFunctionName == null) {
-            LOG.error("Failed to get one available ServiceFunction for {}", serviceFunctionType.getType());
+            LOG.error("Failed to get available ServiceFunction for {}", serviceFunctionType.getType());
             }
 
             SfcProviderTopologyNode firstHopNode;
