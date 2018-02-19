@@ -139,7 +139,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
          * instance with the lowest CPU utilization among the instances whose hop counts to the previously
          * selected SF instance are less than or equal to Path_threshold (default value is 3) and return its name
          */
-        int Path_length;
+        int Path_lengths;
         int Path_threshold = 3;
         sfcProviderTopologyNodeName = null;
         sfcProviderTopologyNodeName_backup = null;
@@ -158,10 +158,10 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
             /* Get shotestpath length from the preSfName to curSfName*/
             List<SfcProviderTopologyNode> sfcProviderTopologyNodeList =
                     sfcProviderGraph.getShortestPath(preSfName.getValue(), curSfName.getValue());
-            Path_length = sfcProviderTopologyNodeList.size()-1;
-            LOG.debug("Shortest path length between {} and {} : {}", preSfName, curSfName, Path_length);
+            Path_lengths = sfcProviderTopologyNodeList.size()-1;
+            LOG.debug("Shortest path length between {} and {} : {}", preSfName, curSfName, Path_lengths);
 
-            if (Path_length <= 1) {
+            if (Path_lengths <= 1) {
                 LOG.debug("No path from {} to {}", preSfName, curSfName);
                 continue;
             }
@@ -182,15 +182,15 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
             java.lang.Long curResourceUtilization =
                     sfcSfDescMon.getMonitoringInfo().getResourceUtilization().getCPUUtilization();
             LOG.debug("CPU Utilization of {} is {}", curSfName, curCPUUtilization);
-            if (preResourceUtilization> curResourceUtilization && Path_length <= Path_threshold) {
+            if (preResourceUtilization> curResourceUtilization && Path_lengths <= Path_threshold) {
                 preResourceUtilization = curResourceUtilization;
                 sfcProviderTopologyNodeName = curSfName;
-            } else if (Path_length > Path_threshold) {
-                if (preLength > Path_length) {
-                    preLength = Path_length;
+            } else if (Path_lengths > Path_threshold) {
+                if (preLength > Path_lengths) {
+                    preLength = Path_lengths;
                     sfcProviderTopologyNodeName_backup = curSfName;
                     preResourceUtilization_backup = curResourceUtilization;
-                } else if (preLength == Path_length && preResourceUtilization_backup > curResourceUtilization) {
+                } else if (preLength == Path_lengths && preResourceUtilization_backup > curResourceUtilization) {
                     sfcProviderTopologyNodeName_backup = curSfName;
                     preResourceUtilization_backup = curResourceUtilization;
                 }
