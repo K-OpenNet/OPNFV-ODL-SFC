@@ -137,10 +137,10 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
         /*
          * If this is not the first SF instance selection round (i.e., preSfName != null), find an
          * instance with the lowest CPU utilization among the instances whose hop counts to the previously
-         * selected SF instance are less than or equal to Path_threshold (default value is 3) and return its name
+         * selected SF instance are less than or equal to Path_thresholds (default value is 3) and return its name
          */
         int Path_lengths;
-        int Path_threshold = 3;
+        int Path_thresholds = 3;
         sfcProviderTopologyNodeName = null;
         sfcProviderTopologyNodeName_backup = null;
         java.lang.Long preResourceUtilization = java.lang.Long.MAX_VALUE;
@@ -182,10 +182,10 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
             java.lang.Long curResourceUtilization =
                     sfcSfDescMon.getMonitoringInfo().getResourceUtilization().getCPUUtilization();
             LOG.debug("CPU Utilization of {} is {}", curSfName, curCPUUtilization);
-            if (preResourceUtilization> curResourceUtilization && Path_lengths <= Path_threshold) {
+            if (preResourceUtilization> curResourceUtilization && Path_lengths <= Path_thresholds) {
                 preResourceUtilization = curResourceUtilization;
                 sfcProviderTopologyNodeName = curSfName;
-            } else if (Path_lengths > Path_threshold) {
+            } else if (Path_lengths > Path_thresholds) {
                 if (preLength > Path_lengths) {
                     preLength = Path_lengths;
                     sfcProviderTopologyNodeName_backup = curSfName;
@@ -288,8 +288,8 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
      * From the second SF type in the chain, the getServiceFunctionByType method
      * returns a name of the instance with the lowest CPU utilization among the
      * instances whose hop counts to the previously selected SF instance are less
-     * than or equal to Path_threshold (default value is 3).
-     * Path_threshold is variable according to the SFC policy.
+     * than or equal to Path_thresholds (default value is 3).
+     * Path_thresholds is variable according to the SFC policy.
      * <p>
      *
      * @param chain Service Function Chain to render
