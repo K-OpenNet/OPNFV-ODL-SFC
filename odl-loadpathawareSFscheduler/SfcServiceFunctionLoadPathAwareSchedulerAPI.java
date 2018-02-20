@@ -204,7 +204,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
 
         if (sfcProviderTopologyNodeName == null) {
         sfcProviderTopologyNodeName = sfcProviderTopologyNodeName_backup;
-            LOG.debug("Since we cannot find {} of Sevice function within Path_Threshold, we select backup sf", preSfName);
+            LOG.debug("Since we cannot find {} of Sevice function within Path_Thresholds, we select backup sf", preSfName);
         }
 
         /*
