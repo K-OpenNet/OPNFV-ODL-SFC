@@ -989,7 +989,7 @@ public class SfcProviderRenderedPathAPI {
             ServiceFunction sf = SfcProviderServiceFunctionAPI.readServiceFunction(hop.getServiceFunctionName());
             ServiceFunctionType sfType = SfcProviderServiceTypeAPI.readServiceFunctionType(sf.getType());
             if (sfType == null) {
-                LOG.error("Service Function type [{}] for Service Function [{}] does not exist.", sf.getType(),
+                LOG.error("Service function type [{}] for service function [{}] does not exist.", sf.getType(),
                         sf.getName());
                 continue;
             }
