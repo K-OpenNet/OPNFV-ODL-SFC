@@ -53,7 +53,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
      * This method finds out name of the Service Function which has lowest load (e,g., CPU Utilization)
      * and lower path between Service Function preSfName than path thresholds whcich is predefiend value
      * per serviceFunctionType.
-     * In this code, we define path thresholds to 4.
+     * In this code, we define path thresholds to 5.
      * We can change the thresholds according to the policy.
      * @param serviceFunctionType Type of Service Function to find
      * @param preSfName Name of previous Service Function in Service Function Path
@@ -140,7 +140,7 @@ public class SfcServiceFunctionLoadPathAwareSchedulerAPI extends SfcServiceFunct
          * selected SF instance are less than or equal to Path_thresholds (default value is 3) and return its name
          */
         int Path_lengths;
-        int Path_thresholds = 4;
+        int Path_thresholds = 5;
         sfcProviderTopologyNodeName = null;
         sfcProviderTopologyNodeName_backup = null;
         java.lang.Long preResourceUtilization = java.lang.Long.MAX_VALUE;
